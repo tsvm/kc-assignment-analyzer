@@ -79,7 +79,9 @@ export function KCChangeChart({ assignments }: KCChangeChartProps) {
           shape={(props: any) => {
             const { x, y, width, height, payload } = props;
             const fill = payload.is_problematic ? 'hsl(0 72% 51%)' : 'hsl(220 10% 70%)';
-            return <rect x={x} y={y} width={width} height={height} fill={fill} opacity={payload.is_problematic ? 0.85 : 0.4} rx={1} />;
+            const rectY = height < 0 ? y + height : y;
+            const rectH = Math.abs(height);
+            return <rect x={x} y={rectY} width={width} height={rectH} fill={fill} opacity={payload.is_problematic ? 0.85 : 0.4} rx={1} />;
           }}
         />
       </ComposedChart>

@@ -26,12 +26,12 @@ export function AssignmentTable({ assignments }: AssignmentTableProps) {
               <td className="py-2 pr-2 text-muted-foreground font-mono text-xs">{i + 1}</td>
               <td className="py-2 px-2 text-foreground font-medium truncate max-w-[200px]">{a.assignment_id}</td>
               <td className="py-2 px-2 text-right font-mono">{a.average_score.toFixed(3)}</td>
-              <td className={`py-2 px-2 text-right font-mono ${a.score_change !== null && a.score_change < 0 ? 'text-destructive' : 'text-chart-success'}`}>
+              <td className={`py-2 px-2 text-right font-mono ${a.score_change !== null && a.score_change < 0 ? 'text-chart-danger' : 'text-chart-success'}`}>
                 {a.score_change !== null ? (a.score_change >= 0 ? '+' : '') + a.score_change.toFixed(3) : '—'}
               </td>
               <td className="py-2 px-2 text-right font-mono">{a.num_kcs}</td>
               <td className="py-2 px-2 text-right font-mono text-chart-success">{a.num_added > 0 ? `+${a.num_added}` : '0'}</td>
-              <td className="py-2 px-2 text-right font-mono text-destructive">{a.num_removed > 0 ? `-${a.num_removed}` : '0'}</td>
+              <td className="py-2 px-2 text-right font-mono text-chart-danger">{a.num_removed > 0 ? `-${a.num_removed}` : '0'}</td>
               <td className="py-2 pl-2 text-center">{a.is_problematic ? '⚠️' : ''}</td>
             </tr>
           ))}

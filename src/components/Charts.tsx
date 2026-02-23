@@ -70,8 +70,8 @@ export function KCChangeChart({ assignments }: KCChangeChartProps) {
           return 'Score Change × 10';
         }} />
         <ReferenceLine y={0} stroke="hsl(220 10% 70%)" />
-        <Bar dataKey="added" fill="hsl(152 60% 42%)" opacity={0.7} />
-        <Bar dataKey="removed" fill="hsl(0 72% 51%)" opacity={0.7} />
+        <Line dataKey="added" stroke="hsl(152 60% 42%)" strokeWidth={2} dot={{ r: 3, fill: 'hsl(152 60% 42%)' }} />
+        <Line dataKey="removed" stroke="hsl(0 72% 51%)" strokeWidth={2} dot={{ r: 3, fill: 'hsl(0 72% 51%)' }} />
         <Bar
           dataKey="score_diff_scaled"
           fill="hsl(220 10% 70%)"

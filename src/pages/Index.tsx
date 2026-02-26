@@ -110,7 +110,7 @@ const Index = () => {
               <SummaryCard label="Assignments" value={result.assignments.length} />
               <SummaryCard label="Unique KCs" value={result.kcStats.length} />
               <SummaryCard label="Avg KCs/Assignment" value={(result.assignments.reduce((s, a) => s + a.num_kcs, 0) / result.assignments.length).toFixed(1)} />
-              <SummaryCard label="Problematic" value={result.problematicAssignments.length} accent />
+              <SummaryCard label="Potentially Problematic" value={result.problematicAssignments.length} accent />
             </div>
 
             {/* Correlations */}

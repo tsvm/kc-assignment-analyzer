@@ -4,7 +4,7 @@ import { CorrelationTable } from '@/components/CorrelationTable';
 import { KCPerformanceChart, KCChangeChart } from '@/components/Charts';
 import { AssignmentTable, KCStatsTable } from '@/components/DataTables';
 import { parseCSV, runAnalysis, type AnalysisResult } from '@/lib/kcAnalysis';
-import { AlertTriangle, BarChart3, FileSpreadsheet, Shield } from 'lucide-react';
+import { AlertTriangle, BarChart3, ExternalLink, FileSpreadsheet, Github, Shield } from 'lucide-react';
 
 const Index = () => {
   const [csvContent, setCsvContent] = useState<string | null>(null);

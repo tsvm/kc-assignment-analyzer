@@ -4,7 +4,7 @@ import { CorrelationTable } from '@/components/CorrelationTable';
 import { KCPerformanceChart, KCChangeChart } from '@/components/Charts';
 import { AssignmentTable, KCStatsTable } from '@/components/DataTables';
 import { parseCSV, runAnalysis, type AnalysisResult } from '@/lib/kcAnalysis';
-import { AlertTriangle, BarChart3, FileSpreadsheet, Shield } from 'lucide-react';
+import { AlertTriangle, BarChart3, ExternalLink, FileSpreadsheet, Github, Shield } from 'lucide-react';
 
 const Index = () => {
   const [csvContent, setCsvContent] = useState<string | null>(null);
@@ -186,9 +186,48 @@ const Index = () => {
         )}
       </main>
 
-      <footer className="border-t border-border mt-12">
-        <div className="mx-auto max-w-6xl px-6 py-4 text-center text-xs text-muted-foreground">
-          Based on "Analyzing the Difficulty of Programming Assignments with Interpretable Knowledge Component Metrics"
+      <footer className="border-t border-border mt-12 bg-card">
+        <div className="mx-auto max-w-6xl px-6 py-8 text-sm">
+          <div className="flex flex-col md:flex-row md:items-start gap-6">
+            <div className="flex-1 space-y-3">
+              <h4 className="font-semibold text-foreground font-display">About this tool</h4>
+              <p className="text-muted-foreground">
+                This tool implements the analysis from the paper{" "}
+                <a
+                  href="https://github.com/tsvm/kc-assignment-analyzer#citation"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-foreground underline hover:text-primary"
+                >
+                  Analyzing the Difficulty of Programming Assignments with Interpretable Knowledge Component Metrics
+                  <ExternalLink className="h-3 w-3" />
+                </a>{" "}
+                (IEEE FIE 2026). It computes knowledge-component metrics such as added/removed KCs, score changes,
+                and Pearson correlations to help instructors understand how assignment difficulty evolves across a course.
+              </p>
+              <p className="text-muted-foreground">
+                <span className="font-medium text-foreground">Authors:</span>{" "}
+                Tsvetomila Mihaylova, Jing Fan, Bita Akram, Narges Norouzi, Peter Brusilovsky, Juho Leinonen, Arto Hellas.
+              </p>
+            </div>
+            <div className="shrink-0 md:text-right space-y-3 md:w-64">
+              <a
+                href="https://github.com/tsvm/kc-assignment-analyzer"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-md border border-border bg-background px-4 py-2 text-foreground hover:bg-muted transition-colors"
+              >
+                <Github className="h-4 w-4" />
+                View on GitHub
+              </a>
+              <p className="text-xs text-muted-foreground">
+                Source code, sample data, and citation information are available in the repository.
+              </p>
+            </div>
+          </div>
+          <div className="mt-8 border-t border-border pt-4 text-center text-xs text-muted-foreground">
+            Based on "Analyzing the Difficulty of Programming Assignments with Interpretable Knowledge Component Metrics" (IEEE FIE 2026).
+          </div>
         </div>
       </footer>
     </div>

@@ -1,6 +1,8 @@
 # KC Assignment Analyzer
 
-This repository contains a web tool for analysis of programming assignments based on knowledge components (KCs).
+This repository contains the code for a web tool for analysis of programming assignments based on knowledge components (KCs).
+
+The tool can be accessed at: https://kc-assignment-analyzer.lovable.app/
 
 To use it, you need to export your assignments, together with average performance and list of KCs for each assignment.
 
